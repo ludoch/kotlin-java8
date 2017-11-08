@@ -18,6 +18,6 @@ class GreetingController {
 
     @GetMapping("/lookup")
     fun lookup(@RequestParam(value = "name", defaultValue = "Ludo") name: String) =
-            """"Hello, $name, you executed the lookup handler in the Kotlin App Engine App.
-             """"
+            """Hello, $name, you executed the lookup handler in the Kotlin App Engine App.
+             """
 }
