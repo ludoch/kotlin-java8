@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.sparkjava:spark-kotlin:1.0.0-alpha">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/sparkjava/spark-kotlin/1.0.0-alpha/spark-kotlin-1.0.0-alpha.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/sparkjava/spark-kotlin/1.0.0-alpha/spark-kotlin-1.0.0-alpha-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/sparkjava/spark-kotlin/1.0.0-alpha/spark-kotlin-1.0.0-alpha-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
