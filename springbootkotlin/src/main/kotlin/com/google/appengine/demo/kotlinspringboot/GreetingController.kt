@@ -15,4 +15,9 @@ class GreetingController {
             Greeting(counter.incrementAndGet(),
                     """"Hello, $name, from a SpringBoot Application written in Kotlin,
                             running on Google App Engine Java8 Standard...""")
+
+    @GetMapping("/lookup")
+    fun lookup(@RequestParam(value = "name", defaultValue = "Ludo") name: String) =
+            """"Hello, $name, you executed the lookup handler in the Kotlin App Engine App.
+             """"
 }
