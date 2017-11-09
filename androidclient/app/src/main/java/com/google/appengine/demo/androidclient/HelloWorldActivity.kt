@@ -25,6 +25,10 @@ class HelloWorldActivity : AppCompatActivity() {
   }
 
   private inner class LookUpName : AsyncTask<String, Unit, String>() {
+    override fun onPreExecute() {
+      resultView.text = ""
+    }
+
     override fun doInBackground(vararg name: String): String {
       val url = URL("http://kotlin-java8.appspot.com/lookup?name=${name[0]}")
       try {

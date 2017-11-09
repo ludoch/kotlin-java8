@@ -15,8 +15,7 @@ import java.io.InputStream;
 import java.net.URL;
 
 public class JavaHelloWorldActivity extends AppCompatActivity {
-  @Override
-  protected void onCreate(@Nullable Bundle savedInstanceState) {
+  @Override protected void onCreate(@Nullable Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_hello_world);
     EditText nameInput = (EditText) findViewById(R.id.nameInput);
@@ -32,10 +31,15 @@ public class JavaHelloWorldActivity extends AppCompatActivity {
   }
 
   private class LookUpName extends AsyncTask<String, Void, String> {
-    @Override
-    protected String doInBackground(String... strings) {
+    private final TextView resultView = (TextView) findViewById(R.id.resultView);
+
+    @Override protected void onPreExecute() {
+      resultView.setText("");
+    }
+
+    @Override protected String doInBackground(String... strings) {
       try {
-        URL url = new URL("http://kotlin-java8.appspot.com/lookup/" + strings[0]);
+        URL url = new URL("http://kotlin-java8.appspot.com/lookup?name=" + strings[0]);
         byte[] bytes;
         try (ByteArrayOutputStream bout = new ByteArrayOutputStream();
              InputStream in = url.openStream()) {
@@ -51,9 +55,7 @@ public class JavaHelloWorldActivity extends AppCompatActivity {
       }
     }
 
-    @Override
-    protected void onPostExecute(String s) {
-      TextView resultView = (TextView) findViewById(R.id.resultView);
+    @Override protected void onPostExecute(String s) {
       resultView.setText(s);
     }
   }
